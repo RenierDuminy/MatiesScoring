@@ -2,17 +2,17 @@
 
 /* Main colours */
 :root {
-  --color-bg-main: #f5f0ea; /* warm neutral background */
+  --color-bg-main: #f6f1eb; /* warm neutral inspired by SU parchment */
   --color-bg-white: #ffffff;
-  --color-brand: #7a003c; /* Stellenbosch maroon for text/buttons */
+  --color-brand: #7a1f3d; /* Stellenbosch University maroon */
   --color-shadow: rgba(0, 0, 0, 0.1);
-  --color-headings-bg: #efe2c5; /* soft gold for table headers */
-  /* Palette inspired by SU Communications logo */
-  --su-maroon-1: #7a003c;
-  --su-maroon-2: #560028;
-  --su-gold-1: #c5972d;
-  --su-gold-2: #f0d68f;
-  --su-neutral: #f5f0ea;
+  --color-headings-bg: #efe3d5; /* soft gold-cream for table headers */
+  /* Palette inspired by Stellenbosch University crest */
+  --su-maroon-1: #5a182d;
+  --su-maroon-2: #7a1f3d;
+  --su-maroon-3: #9c2f50;
+  --su-gold-1: #b4975b;
+  --su-gold-2: #d6c28d;
 }
 
 /* Stripping all margins/padding avoids cross‐browser inconsistencies */
@@ -31,11 +31,6 @@ body {
   line-height: 1.2;
   padding: 1rem; /* breathing room on all sides */
   font-size: 20px;
-  background-color: var(--color-bg-main);
-  background-image:
-    radial-gradient(circle at 0 0, rgba(122, 0, 60, 0.08) 0, rgba(122, 0, 60, 0.08) 6px, transparent 7px),
-    radial-gradient(circle at 60px 60px, rgba(122, 0, 60, 0.06) 0, rgba(122, 0, 60, 0.06) 6px, transparent 7px);
-  background-size: 120px 120px;
 }
 
 
@@ -45,9 +40,9 @@ body {
 
 .form-container {
   background-color: var(--color-bg-white);
-  padding: 2rem 1.5rem;
-  border-radius: 18px;
-  box-shadow: 0 8px 24px rgba(86, 0, 40, 0.15);
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px var(--color-shadow);
   max-width: 700px;
   margin: auto;
   border: 4px solid var(--color-brand);
@@ -68,13 +63,14 @@ body {
   background: var(--color-bg-main);
 }
 
-/* SU Comm theme header gradient */
-.site-header.su-comm {
+/* SU theme header gradient */
+.site-header.su {
   background: linear-gradient(
     90deg,
     var(--su-maroon-1) 0%,
-    var(--su-maroon-2) 30%,
-    var(--su-gold-1) 65%,
+    var(--su-maroon-2) 35%,
+    var(--su-maroon-3) 55%,
+    var(--su-gold-1) 78%,
     var(--su-gold-2) 100%
   );
 }
@@ -207,44 +203,29 @@ input {
 
 input[type="button"],
 .main-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
+  padding: 8px;
   background: var(--color-brand);
   color: #ffffff;
-  border: 1px solid transparent;
-  border-radius: 12px;
+  border: none;
+  border-radius: 15px;
   cursor: pointer;
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
+  font-size: 14px;
   flex: 1;
-  box-shadow: 0 6px 12px rgba(86, 0, 40, 0.18);
-  transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 input[type="button"]:hover,
 .main-button:hover {
-  background: var(--su-maroon-2);
-  box-shadow: 0 10px 18px rgba(86, 0, 40, 0.25);
-  transform: translateY(-1px);
-}
-
-input[type="button"]:focus-visible,
-.main-button:focus-visible {
-  outline: 3px solid var(--su-gold-1);
-  outline-offset: 3px;
+  background: #4f202f;
 }
 
 .main-button:disabled {
-  background: rgba(122, 0, 60, 0.35);
+  background: #8a86b3;
   cursor: not-allowed;
   opacity: 0.7;
 }
 
 .taller-button {
-  padding: 1.5rem;
+  padding: 15px;
 }
 
 .PausePlay-button {
@@ -258,6 +239,7 @@ input[type="button"]:focus-visible,
   justify-content: space-evenly;
   gap: 15px;
   width: 100%;
+  margin: 0 0 1.25rem;
 }
 
 /* Add score buttons */
@@ -383,7 +365,7 @@ input[type="button"]:focus-visible,
 .time-additions-trigger {
   display: flex;
   justify-content: center;
-  margin: 0.5rem 0 1.5rem;
+  margin: 0.75rem 0 1.25rem;
 }
 
 .time-additions-trigger .main-button {
@@ -1086,7 +1068,7 @@ input[type="button"],
 
 input[type="button"]:hover,
 .add-score:hover {
-  background: var(--su-maroon-2);
+  background: var(--su-maroon-1);
 }
 
 .taller-button {
